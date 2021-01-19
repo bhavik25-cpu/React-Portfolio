@@ -1,0 +1,123 @@
+ .proj{
+    font-size: 5rem;
+    text-align: center;
+    font-weight: 100;
+    margin-right: 33%;
+    letter-spacing: 3px;
+    animation: projectAnimation 3s ease-in-out 100ms 1 normal;
+}
+.continue{
+    margin: 2% 2% 6% 11%;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+.continue a{
+  text-decoration: none;
+}
+
+.continue .sample{
+    color: white;
+    font-size: 15px;
+    /* border: 1px solid red; */
+    border-radius: 50%;
+    padding: 1%;
+    /* margin-top: 1%; */
+    margin-right: 1%;
+    margin-left: 52%;
+    text-decoration: none;
+    text-align: center;
+}
+
+.continue .sample:hover{
+    opacity: 0.5;
+    font-size: 1.12rem; ;
+     
+}
+
+.continue .sample{
+    border-color: rgba(255, 51, 51, 0.856);
+    background-color: rgba(255, 51, 51, 0.856);
+}
+
+.underline{
+    margin: 2% 11% 0% 11%;
+}
+article{
+    margin-top: 4%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    animation: projectAnimation 3s ease-in-out 100ms 1 normal;
+}
+article img{
+    width: 27%;
+    height: 8%;
+    border-radius: 12px;
+}
+article .container{
+    margin-left: 2%;
+}
+article .container h2{
+    font-size: 3.4rem;
+}
+
+article .container p{
+    font-size: 3.4rem;
+    font-size: 1.24rem;
+    margin-top: 5%;
+}
+
+@keyframes projectAnimation{
+    from{
+      opacity:0;
+    }
+    to{
+      opacity: 1;
+    }
+  }
+
+
+
+
+@media (min-width:375px) and (max-width:765px){
+    .proj {
+        font-size: 5rem;
+        text-align: center;
+        font-weight: 100;
+        margin-right: 36%;
+        margin-left: 5%;
+        letter-spacing: 3px;
+        animation: projectAnimation 3s ease-in-out 100ms 1 normal;
+    }
+    article img {
+        margin-bottom: 3%;
+        width: 39%;
+        height: 8%;
+        border-radius: 12px;
+    }
+}
+  
+@media (max-width:374px){
+    .proj {
+        font-size: 5rem;
+        text-align: center;
+        font-weight: 100;
+        margin-right: 36%;
+        margin-left: 5%;
+        letter-spacing: 3px;
+        animation: projectAnimation 3s ease-in-out 100ms 1 normal;
+    }
+
+    article .container h2 {
+        font-size: 2.4rem;
+    }
+    article .container p {
+        font-size: 3.4rem;
+        font-size: 1.1rem;
+        margin-top: 5%;
+    }
+  
+  }
+  

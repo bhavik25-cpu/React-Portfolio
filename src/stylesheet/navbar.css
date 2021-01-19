@@ -1,0 +1,140 @@
+
+
+nav{
+  display:flex;
+  flex-wrap: wrap; 
+  justify-content:space-around;
+  align-items: center;
+  padding: 5rem 0rem;
+  margin: 0rem 0rem;
+  animation: navigation 1s ease-in-out 0s 1 normal;
+
+  /* border: 2px solid red; */
+}
+
+.navbar .my-name h1{
+  font-weight: 700;
+  font-size: 4.9rem;
+}
+.navbar .my-name h2{
+  font-size: 1.45rem;
+  
+}
+
+.items{
+  display: flex;
+  flex-wrap: wrap; 
+  list-style: none;
+  /* border: 2px solid blue; */
+}
+.items li a{
+  font-size: 1.17rem;
+  margin-right: 2rem;
+  text-decoration: none;
+  
+}
+
+.items li a:hover{
+  font-size: 1.29rem;
+  color: rgba(64, 88, 224, 0.87);
+}
+
+.items li a.active{
+  color:  rgb(64, 88, 224);
+}
+
+
+/* .my-name{
+  border: 2px solid green;
+  
+      margin: 1rem 18rem 3rem 18rem;
+}  */
+
+@keyframes navigation{
+  from{
+    opacity:0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+
+  /* Screen for Phone or tab */
+@media (max-width:768px)
+{
+  nav{
+    display:flex;
+    flex-wrap: wrap; 
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    /* border: 2px solid red; */
+    padding: 3rem 0rem 2rem 0rem;
+    margin: 0rem 0rem;
+    animation: navigation 1s ease-in-out 0s 1 normal;
+  }
+  
+  .navbar .my-name h1{
+    margin-left: 1px;
+    font-weight: 700;
+    font-size: 2.9rem;
+  }
+  .navbar .my-name h2{
+    font-size: 0.91rem;
+    margin-bottom: 2rem;
+  }
+  
+  .items{
+    margin-left: 6%;
+    display: flex;
+    flex-wrap: wrap; 
+    list-style: none;
+    /* border: 2px solid blue; */
+  }
+  .items li a{
+    font-size: 1.17rem;
+    margin-right: 1rem;
+    text-decoration: none;
+  }
+
+  .items li a:hover{
+    font-size: 1.29rem;
+    color: rgba(64, 88, 224, 0.87);
+  }
+  
+  .items li a.active{
+    color:  rgb(64, 88, 224);
+  }
+  
+  
+  /* .my-name{
+    border: 2px solid green;
+    
+        margin: 1rem 18rem 3rem 18rem;
+  }  */
+  
+  @keyframes navigation{
+    from{
+      opacity:0;
+    }
+    to{
+      opacity: 1;
+    }
+  }
+}
+
+
+@media (max-width:374px){
+
+  .navbar .my-name h1 {
+    margin-left: 15px;
+    font-weight: 700;
+    font-size: 44px;
+}
+.navbar .my-name h2 {
+  font-size: 16px;
+  margin-left: 20px;
+  margin-bottom: 2rem;
+}
+}

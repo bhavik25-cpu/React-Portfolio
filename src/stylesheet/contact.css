@@ -1,0 +1,156 @@
+section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items: flex-start;
+    margin-top: 2%;
+    animation: contactAnimation 3s ease-in-out 100ms 1 normal;
+   
+    
+}
+
+section h1{
+    margin-left: 4%;
+    align-items: start;
+    font-size: 6rem;
+    letter-spacing: 9px;
+    margin-right: 10%;
+    margin-bottom: 25%;
+    /* border: 2px solid black; */
+}
+section span{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    /* border: 2px solid red; */
+}
+
+section span h5{
+    font-size: 0.9rem;
+    font-weight:500 ;
+    margin-left: 4%;
+}
+.forms input{
+    border: 1px solid rgb(253, 108, 132);
+    border-radius: 5px;
+     display: block;
+     padding: 3% 46% 3% 2%;
+     margin: 5% 14% 6% 4%;
+     border-style: inset;
+     background-color: rgb(253, 108, 132);
+     cursor:auto;
+     caret-color: white;
+}
+.forms textarea{
+    box-shadow: none;
+    border-radius: 5px;
+    padding: 2% 2% 2% 2%;
+    margin: 3.3px 9.9125px 1.5375px 18.225px;
+    width: 358px;
+    height: 64px;
+    background-color:  rgb(253, 108, 132);
+    resize: none;
+    cursor:auto;
+    caret-color: white;
+}
+.forms textarea::placeholder{
+    color: rgb(255, 255, 255);
+    padding-left: 1%;
+}
+
+.forms input::placeholder{
+    color: rgb(255, 255, 255);
+    padding-left: 2%;
+}
+
+.forms input::selection {
+    background-color:  rgb(248, 78, 106);
+    padding-left: 2%;
+    color: wheat 
+}
+
+.forms button{
+    font-weight: bold;
+    margin: 0% 2% 1% 76%;
+    border: none;
+    background-color: inherit;
+    /* padding: 14px 28px; */
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.forms button:hover{
+    font-size: 17px;
+    color: rgba(64, 88, 224, 0.87);
+}
+
+@keyframes contactAnimation{
+    from{
+      opacity:0;
+    }
+    to{
+      opacity: 1;
+    }
+  }
+
+
+  
+
+/* @media (min-width:375px) and (max-width:765px){
+    section h1 {
+        align-items: start;
+        font-size: 6rem;
+        letter-spacing: 9px;
+        margin-right: 18%;
+        margin-bottom: 6%;
+        /* border: 2px solid black; 
+    }
+} */
+
+  @media (max-width:374px)
+  {
+    section h1 {
+        margin-left: 29%;
+        align-items: start;
+        font-size: 5rem;
+        letter-spacing: 1px;
+        margin-right: 5%;
+        margin-bottom: 25%;
+        /* border: 2px solid black; */
+    }
+
+    section span h5 {
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin-left: 12%;
+    }
+    .forms{
+        margin-left: 9%;
+    }
+
+    .forms textarea {
+        box-shadow: none;
+        border-radius: 5px;
+        padding: 2% 2% 2% 2%;
+        margin: 3.3px 9.9125px 1.5375px 18.225px;
+        width: 301px;
+        height: 69px;
+        background-color: rgb(253, 108, 132);
+        resize: none;
+        cursor: auto;
+        caret-color: white;
+    }
+
+    .forms button {
+        font-weight: bold;
+        margin: 4% 2% 5% 84%;
+        border: none;
+        background-color: inherit;
+        /* padding: 14px 28px; */
+        font-size: 16px;
+        cursor: pointer;
+        display: inline-block;
+    }
+  
+  }

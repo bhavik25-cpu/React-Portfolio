@@ -1,0 +1,103 @@
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    background-color: rgb(253, 166, 180);
+    position: relative;
+    bottom: 3rem;
+    animation: footerAnimation 5s ease-in-out 200ms 1 normal;
+    
+}
+.icons{
+    /* border: 2px solid yellow; */
+    background-color: rgb(253, 166, 180);
+    display: grid;
+    justify-content:  space-around;;
+    align-items: stretch;
+    margin: 4rem 6rem;
+    padding: 2rem 2 rem;
+    grid-template-columns: 5rem 1px 11rem;
+    grid-template-rows: 55% 44%;
+    grid-template-areas: 
+    "img . header"
+    "img . content";
+
+}
+.icons .sample{
+    background-color: rgb(253, 166, 180);
+    grid-area: img;
+    /* border: 2px solid red; */
+    border-radius: 50%;
+    margin: 23% 4% 6% 26%;;
+    padding: 5% 6% 6% 7%;
+}
+
+
+.icons  h6{
+    background-color: rgb(253, 166, 180);
+    grid-area: header;
+    font-size: 1.9rem;
+    margin-left: 0rem;
+    font-family: 'Open Sans', sans-serif;
+  }
+.icons span{
+    grid-area: content;
+    font-size: 1.2rem;
+    font-weight: 500;
+    background-color: rgb(253, 166, 180);
+    font-family: 'Open Sans', sans-serif;
+ /* border: 2px solid blue; */
+}
+
+
+.icons span a{
+    background-color: rgb(253, 166, 180);
+    margin-left: 11%;
+}
+#abc span a:hover{
+    cursor: pointer;
+}
+
+@keyframes footerAnimation{
+    from{
+      opacity:0;
+    }
+    to{
+      opacity: 1;
+    }
+  }
+
+
+    /* Screen for Phone or tab */
+@media (min-width:375px) and (max-width:765px){
+   
+  footer{
+    margin: 1% -29% 0% -3%;
+    position:static;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    background-color: rgb(253, 166, 180);
+    animation: footerAnimation 5s ease-in-out 200ms 1 normal;
+     
+}
+
+}
+
+@media (max-width:374px){
+   
+  footer{
+    margin: 1% -44% 0% -3%;
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-content: start;
+    background-color: rgb(253, 166, 180);
+    animation: footerAnimation 5s ease-in-out 200ms 1 normal;
+     
+}
+
+}

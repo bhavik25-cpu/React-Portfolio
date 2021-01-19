@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Noticia+Text&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Noticia Text', serif;
+  background-color:rgb(252, 222, 228);  /*   #f8dbc2 */
+  color: rgba(22, 21, 21, 0.945);
+  cursor: context-menu;
+}
+
+a{
+  cursor: pointer;
+}
+
