@@ -1,10 +1,11 @@
-// import Navbar from '../shared/Navbar';
-// import Footer from '../shared/Footer';
 import '../stylesheet/home.css';
 import Avatar from '../assets/avatar.jpg';
 import { Link } from 'react-router-dom';
+import useFetch from '../utils/useFetch';
 
-const Home = () => {
+const Home = () => { 
+  const { data, isPending, error } = useFetch('/intro');
+
   return (
     <div>
 
@@ -22,10 +23,11 @@ const Home = () => {
           </div>
 
           <div className="para">
-            <p> To work in an environment which encourages me to
-            succeed and grow professionally where I can utilize my skills and knowledge appropriately.
-           <br /><br />I have experience in Flutter App Development and ReactJs for more than a year and had completed several projects which are available in my GitHub Repository and had also taken part in Hackathons as App Developer and also completed an internship in app development. I have also experience in Firebase Authentication and can easily connect and make dynamic apps.
-           I am also an ML Developer and had worked with the implementation of the ML model in App development.</p>
+            {isPending && <div>Loding...</div>}
+            {error && <div>{error}</div>}
+            <p>
+               {data}
+            </p>
           </div>
 
         </div>

@@ -1,14 +1,17 @@
 import '../stylesheet/resume.css';
-
+import useFetch from '../utils/useFetch';
 
 const ResumeBody = () => {
+    const { data, isPending, error } = useFetch('/resume/prof');
+    const { data: edu, isPending: p5, error: e5 } = useFetch('/resume/education');
+    const { data: wexp, isPending: p2, error: e3 } = useFetch('/resume/workexp');
+
+
     return (
         <body>
             <div className="prof">
                 <h4>Professional ​info​​</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ratione ut eius id, harum ducimus natus
-                perferendis dignissimos vel eos illo rerum voluptate obcaecati sed rem molestias odio, repudiandae maiores voluptatem! Architecto,
-                 eum quasi.</p>
+                {data && <p>{data}</p>}
             </div>
             <hr id="underline" />
 
@@ -16,15 +19,16 @@ const ResumeBody = () => {
                 <h4>Work​ experience​</h4>
 
                 <div id="xyz">
-                {/* experience​ body here */}
-                    <div className="prof">
-                    <h5>Intern.</h5>
-                    <h6>06/2010 - 06/2010</h6>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ratione ut eius id, harum ducimus natus
-                    perferendis dignissimos vel eos illo rerum voluptate obcaecati sed rem molestias odio, repudiandae maiores voluptatem! Architecto,
-                     eum quasi.</p>
-                    </div>
-                {/* experience​ body here */}
+                    {
+                        (wexp) &&
+                        wexp.map(item => (
+                            <div className="prof" key={item.id}>
+                                <h5>{item.title}</h5>
+                                <h6>{item.time}</h6>
+                                <p>{item.body}</p>
+                            </div>
+                        ))
+                    }
                 </div>
             </div>
             <hr id="underline" />
@@ -33,20 +37,22 @@ const ResumeBody = () => {
                 <h4>Education​</h4>
 
                 <div id="xyz">
-                {/* education body here */}
-                    <div className="prof">
-                    <h5>University name</h5>
-                    <h6>06/2010 - 06/2010</h6>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ratione ut eius id, harum ducimus natus
-                    perferendis dignissimos vel eos illo rerum voluptate obcaecati sed rem molestias odio, repudiandae maiores voluptatem! Architecto,
-                     eum quasi.</p>
-                    </div>
-                {/* education body here */}
+                    {
+                        (edu) &&
+                        edu.map(item => (
+                            <div className="prof" key={item.id}>
+                                <h5>{item.title}</h5>
+                                <h6>{item.time}</h6>
+                                <p>{item.body}</p>
+                            </div>
+                        ))
+                    }
                 </div>
             </div>
 
 
         </body>
+
     );
 }
 

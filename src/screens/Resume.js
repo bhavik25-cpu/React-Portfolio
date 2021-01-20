@@ -6,7 +6,7 @@ const Resume = () => {
     return (
         <div id="resume">
             <h1 id="proj">RESUME</h1>
-            <hr id="underline" />
+            <hr id="underline" /> 
             <section className="resume-main">
             <ResumeBody/>
             <ResumeAside/>

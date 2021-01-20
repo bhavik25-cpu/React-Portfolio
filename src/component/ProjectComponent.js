@@ -1,19 +1,24 @@
 import '../stylesheet/project.css';
+import useFetch from '../utils/useFetch';
 
 const ProjectComponent = () => {
+    const { data, isPending, error } = useFetch('/project');
     return (
         <div>
-            <article>
-                <img src="https://blog.hubbado.com/content/images/2020/01/projectmanager.png" alt="Image Error" />
-                <span className='container'>
-                    <h2>Project | 01 </h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore repellat sint tempora adipisci aperiam pariatur laboriosam ipsa voluptatum,
-                    voluptatibus, ipsum nesciunt praesentium tenetur. Tenetur quo voluptate ut numquam voluptatibus totam eius soluta aliquam molestiae enim!
-                    Animi repudiandae reiciendis consequatur sequi sit laborum perferendis earum? Libero laborum optio esse perferendis eum.
-              </p>
-                </span>
-            </article>
-            <hr className="underline"/>
+            {
+               (data) &&
+                data.map(item => (
+                    <article key={item.id}>
+                        <img src={item.image} alt="Image Error" />
+                        <span className='container'> 
+                            <h2>{item.title} </h2>
+                            <p>{item.body}</p>
+                        </span>
+                    </article>
+                ))
+              
+            }
+            <hr className="underline" />
         </div>
 
     );

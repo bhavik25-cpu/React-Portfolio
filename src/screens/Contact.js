@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import '../stylesheet/contact.css';
+import firebase from '../utils/firebase';
 
 
 const Contact = () => {
@@ -9,10 +10,20 @@ const Contact = () => {
     const [describe, setDescribe] = useState();
 
     const handleSubmit =(e)=>{
-        e.preventDefault();
-        const contact = {name, email, phone, describe};
-        console.log(contact);
-        console.log(e);
+        // e.preventDefault();
+        // const contact = {name, email, phone, describe};
+        // console.log(contact);
+        // console.log(e);
+
+        const portfolio = firebase.database().ref('/contact');
+        const contacts = {
+            "name": name,
+            "email": email,
+            "phone": phone,
+            "desc": describe
+        };
+    
+        portfolio.push(contacts);
     }
 
     return (

@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom';
 import '../stylesheet/navbar.css';
+import useFetch from '../utils/useFetch';
 
 const Navbar = () => {
+    const { data, isPending, error } = useFetch('/nav');
     return (
         <nav className='navbar'>
             <div className="my-name">
                 <h1>Arijit Mukherjee</h1>
-                <h2>App Developer || Web Developer || ML & AI Enthusiast</h2>
+               { data &&  <h2>{data}</h2> }
             </div>
 
 
