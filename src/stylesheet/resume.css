@@ -1,0 +1,117 @@
+#resume{
+    margin-bottom: 10%;
+}
+
+#proj{
+    font-size: 5rem;
+    text-align: center;
+    font-weight: 100;
+    margin-right: 57%;
+    letter-spacing: 3px;
+    animation: projectAnimation 3s ease-in-out 100ms 1 normal;
+}
+
+#underline{
+    margin: 2% 27% 0% 10%;
+}
+/* 
+.resume-main{ 
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+} */
+
+body{
+    margin-bottom: 3%;
+}
+body .prof{
+    display: flex;
+}
+
+body .prof h4{
+    
+    margin: 1% 1% 1% 10%;
+    padding: 0% 2%;
+    font-size: 2rem;
+    font-weight: 500;
+
+}
+body .prof h5{
+    margin: 2% 2% 1% 2%;
+    display: inline;
+}
+body .prof h6{
+    padding-right: 5%;
+    margin: 6% 1% 2% -5%;
+    display: inline;
+    padding-right: 5%;
+    margin: 6% 1% 2% -6%;
+    display: inline;
+}
+
+body .prof p{
+   
+        margin: 2% 27% 2% 0%;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 15px;
+        font-weight: 400;
+        text-align: justify;
+   
+}
+
+
+body .prof #xyz{
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* body .prof #xyz h5{
+    margin: 2% 2% 1% 2%;
+    display: inline;
+}
+
+body .prof #xyz h6{
+    padding-right: 5%;
+    margin: 6% 1% 2% -5%;
+    display: inline;
+    padding-right: 5%;
+    margin: 5% 1% 2% -6%;
+    display: inline;
+} */
+
+
+#res-aside{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+
+#res-aside #res1{
+    margin: 0% 47% 5% 5%;
+}
+
+#res-aside #res2{
+    margin: 0% 2% 5% 0%;
+  }
+  
+
+#res-aside .element h3{
+    margin-top: 2%;
+   font-size: 2rem;
+   font-weight: 200;
+}
+
+#res-aside .element li{
+    list-style: none;
+    font-size: 21px;
+}
+
+#res-aside .element .underline2{
+    margin: 2% -20% 2% 2%;
+}
+

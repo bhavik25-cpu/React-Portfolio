@@ -2,6 +2,7 @@
 import Home from './screens/Home'
 import Contact from './screens/Contact'
 import Project from './screens/Project'
+import Resume from './screens/Resume'
 import Navbar from './shared/Navbar';
 import Footer from './shared/Footer';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -20,6 +21,9 @@ function App() {
           </Route>
           <Route exact path="/project">
             <Project />
+          </Route>
+          <Route exact path="/resume">
+            <Resume />
           </Route>
         </Switch>
         <Footer />

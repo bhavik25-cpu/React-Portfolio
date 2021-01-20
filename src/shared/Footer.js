@@ -24,8 +24,8 @@ const Footer = () => {
                 <GoPlay size='35' className="sample" />
                 <h6>Follow Me</h6>
                 <span className="extra">
-                    <a href="https://www.linkedin.com/in/arijit-mukherjee-065091190/" target="_blank"><ImLinkedin size='30' cursor="pointer"/></a>  
-                    <a href="https://github.com/Arijit123Muk" target="_blank" ><GrGithub size='30' /></a>
+                    <a href="https://www.linkedin.com/in/arijit-mukherjee-065091190/" target="_blank" rel="noopener noreferrer"><ImLinkedin size='30' cursor="pointer"/></a>  
+                    <a href="https://github.com/Arijit123Muk" target="_blank" rel="noopener noreferrer" ><GrGithub size='30' /></a>
                 </span>
             </div>
 

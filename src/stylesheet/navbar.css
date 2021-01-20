@@ -97,16 +97,16 @@ nav{
     margin-right: 1rem;
     text-decoration: none;
   }
-
+ 
   .items li a:hover{
     font-size: 1.29rem;
     color: rgba(64, 88, 224, 0.87);
   }
   
-  .items li a.active{
+ /* nav .items li a:active{
     color:  rgb(64, 88, 224);
   }
-  
+   */
   
   /* .my-name{
     border: 2px solid green;

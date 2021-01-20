@@ -2,6 +2,7 @@
 // import Footer from '../shared/Footer';
 import '../stylesheet/home.css';
 import Avatar from '../assets/avatar.jpg';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -15,9 +16,9 @@ const Home = () => {
           <h2>a bit about me</h2>
 
           <div className="side">
-            <a href="" className="sample" id="item1">MY RESUME</a>
-            <a href="" className="sample" id="item2">MY WORK</a>
-            <a href="" className="sample" id="item3">MY SKILLS</a>
+            <Link to="/resume" className="sample" id="item1">MY RESUME</Link>
+            <Link to="/project" className="sample" id="item2">MY WORK</Link>
+            <Link to="/project" className="sample" id="item3">MY SKILLS</Link>
           </div>
 
           <div className="para">
