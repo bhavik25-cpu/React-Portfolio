@@ -5,7 +5,7 @@ Here is my React Portfolio <span style='font-size:40px;'>&#128071;</span>
 
 ## Demo ##
 <a href="https://github.com/Arijit123Muk/React-Portfolio/blob/main/proj%20logo/reactportfolio.jpg">
-          <a href="https://a-mukherjee-2000.web.app/" target="_blank"><img alt="Qries" src="https://github.com/Arijit123Muk/Portfolio/blob/master/Screenshots/portfolio.gif"
+          <a href="https://a-mukherjee-2000.web.app/" target="_blank"><img alt="Qries" src="https://github.com/Arijit123Muk/React-Portfolio/blob/main/proj%20logo/reactportfolio.jpg"
               width=1000" height="600"></a> 
          </a>
 
