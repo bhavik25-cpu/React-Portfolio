@@ -1,70 +1,175 @@
-# Getting Started with Create React App
+<h1 align="center">React Redux Sample</h1>
+<p align="center">
+  <a href="https://www.npmjs.com/" target="_blank"><img src="https://img.shields.io/badge/Packages-NPM-%23CB3837.svg?logo=npm&link=https://www.npmjs.com"></a>
+  <a href="https://webpack.js.org/" target="_blank"><img src="https://img.shields.io/badge/Bundler-Webpack-%238DD6F9.svg?logo=Webpack"></a>
+  <a href="https://reactjs.org/" target="_blank"><img src="https://img.shields.io/badge/View-React-blue.svg?logo=React"></a>
+  <a href="https://redux.js.org/" target="_blank"><img src="https://img.shields.io/badge/State-Redux-744cbc.svg?logo=Redux&logoColor=ED2B88"></a>
+  <a href="https://react.semantic-ui.com/" target="_blank"><img src="https://img.shields.io/badge/UI%20Framework-Semantic%20UI-%2300b5ad.svg"></a>
+  <a href="https://www.styled-components.com/" target="_blank"><img src="https://img.shields.io/badge/%F0%9F%92%85%20Styles-Styled%20Components-%23de9b62.svg"></a>
+  <a href="https://github.com/prettier/prettier" target="_blank"><img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg"></a>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+React application bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app) for using with `REST API` and [Redux](https://www.npmjs.com/package/redux) for state managing.
 
-In the project directory, you can run:
+Both components and redux-specific code (reducers, actions, action types) splitted by feature-first pattern [Re-Ducks](https://medium.freecodecamp.org/scaling-your-redux-app-with-ducks-6115955638be).
 
-### `npm start`
+## File structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+src/
+├── state/        => represents redux
+├── views/        => all react components
+└── utilities/    => global constants and helper functions
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Redux
 
-### `npm test`
+State folder contains usual `store.js` and folder `ducks`, where one 'duck' equals one feature with one reducer. One duck contains `actions.js`, `redurers.js`, `types.js` and optional `utils.js`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+ducks/
+├── duck/
+|   ├── actions.js
+|   ├── reducers.js
+|   ├── types.js
+|   ├── utils.js
+|   └── index.js
+└── index.js
+```
 
-### `npm run build`
+Since `index.js` of each duck have default export as this feature's reducer, index of `ducks` folder represents `root reducer`. So adding a new, changing or deleting existing features in redux being not so painful - all files, related to one feature concentrated in one folder.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+> It also prevents merge conflicts in situations, when several people working around different features need to touch same files, as `types`, `actions`, etc.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```js
+// ducks/index.js
+export { reducer as form } from "redux-form"
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+export { default as user } from "./user"
+export { default as profile } from "./profile"
 
-### `npm run eject`
+/* ... */
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+// store.js
+import * as reducers from "./ducks"
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+export default createStore(
+  combineReducers(reducers),
+  reduxDevTools,
+  applyMiddleware(...middlewares you use)
+)
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+> Index of **ducks/** folder = old **root reducer** with _x2 less more code_
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### One more thing about reducers
 
-## Learn More
+There is a helper function, called `createReducer`, used to create reducers, not using basic _switch-case_ template.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```jsx
+const someReducer = createReducer(initialState)({
+  [types.YOUR_ACTION_TYPE]: (state, action) => {
+    const some_var = "";
+    return {
+      ...state,
+      some_prop: action.payload
+    };
+  },
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  [types.SOME_ANOTHER_TYPE]: (state, { payload: { data } }) => ({
+    ...state,
+    data,
+    loading: false
+  }),
 
-### Code Splitting
+  [types.MAY_BE_YOU_WANT_RESET]: (state, action) => ({
+    ...initialState
+  })
+});
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Its very useful, for example, if you need to scope out part of reducer to use variables with same name in several `case` statements.
 
-### Analyzing the Bundle Size
+> **Tip:** `switch-case` template still can be useful when several types causes same reaction.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### About actions
 
-### Making a Progressive Web App
+To handle asynchronous actions we usually using [redux-thunk](https://www.npmjs.com/package/redux-thunk) middleware and _always_ using action creators.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```jsx
+const someAction = payload => ({
+  type: types.SOME_YOUR_TYPE,
+  payload
+});
 
-### Advanced Configuration
+const someFetchAction = payload => (dispatch, getState) => {
+  dispatch(setLoading(payload.id));
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+  fetch(GET, `/api_endpoint?some_parameter=${payload.id}`)
+    .then(response => {
+      if (getState().yourReducer.currentLoading === payload.id) {
+        dispatch(setLoaded(response));
+      }
+    })
+    .catch(error => {
+      dispatch(setFail(error));
+      console.error(error);
+    });
+};
+```
 
-### Deployment
+## React
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```
+views/
+├── routes/       => base router
+├── components/   => feature-first components
+├── pages/        => layouts, related to routes
+├── styled/       => StyledComponents
+└── UI/           => reusable components
+```
 
-### `npm run build` fails to minify
+We splitting components to two parts - _Container_ and _Component_.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**`Container`** file concentrates in itself all logic and HOCs of this feature.
+
+**`Component`** itself usually a plain _stateless_ component.
+
+```jsx
+// FeatureContainer.js
+
+import Feature from './Feature.jsx'
+
+const withConnect = connect(...)
+
+const withForm = reduxForm({
+  ...
+})
+
+const enhance = compose(
+  withConnect,
+  withForm,
+  anyOtherListedHOC
+)
+
+export default enhance(Feature)
+
+// Feature.jsx
+
+const Feature = ({props you needed}) => (
+  /* some jsx code here */
+)
+
+export default Feature
+```
+
+## License
+react-app-best-practice is Copyright © 2015-2019 Codica. It is released under the [MIT License](https://opensource.org/licenses/MIT).
+
+## About Codica
+
+[![Codica logo](https://www.codica.com/assets/images/logo/logo.svg)](https://www.codica.com)
+
+We love open source software! See [our other projects](https://github.com/codica2) or [hire us](https://www.codica.com/) to design, develop, and grow your product.

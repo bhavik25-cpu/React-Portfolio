@@ -106,7 +106,7 @@ section{
 
 
   /* Screen for Phone or tab */
-  @media (main-width:375px) and (max-width:765px)
+  @media (min-width:375px) and (max-width:765px)
   {
     section{
         display: flex;
@@ -120,15 +120,14 @@ section{
     }
     
     .home img {
-           /* border: 2px solid black; */
-    border-radius: 50%;
-    width: 64%;
-    height: 30%;
-    margin-left: 43%;
-    margin-right: 10%;
-    margin-bottom: 10%;
-        
-      }
+      /* border: 2px solid black; */
+      border-radius: 50%;
+      width: 64%;
+      height: 30%;
+      margin-left: 121%;
+      margin-right: 10%;
+      margin-bottom: 10%;
+  }
       .container{
           display: flex;
           flex-wrap: wrap;
@@ -211,35 +210,59 @@ section{
 
 @media (max-width:374px){
 
-  .home img {
-    /* border: 2px solid black; */
-    border-radius: 50%;
-    width: 46%;
-    height: 20%;
-    margin-right: 10%;
-    margin-bottom: 17%;
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 2%;
+    margin-left: 13%;
+    animation: contactAnimation 3s ease-in-out 100ms 1 normal;
 }
 
-  .container h1 {
-    margin-left: 17%;
-    margin-bottom: 0%;
-    align-items: start;
-    font-size: 6rem;
-    letter-spacing: 6px;
+.home img {
+  /* border: 2px solid black; */
+  border-radius: 50%;
+  width: 61%;
+  height: 20%;
+  margin-right: 10%;
+  margin-bottom: 17%;
+}
+
+.container h1 {
+  margin-left: 48%;
+  margin-bottom: 0%;
+  align-items: start;
+  font-size: 6rem;
+  letter-spacing: 6px;
 }
 
 .container h2 {
-  margin-left: 9%;
-  font-size: 3rem;
-  letter-spacing: 2.9px;
+  margin-left: 45%;
+  font-size: 34px;
+  letter-spacing: 4px;
 }
+
+.side {
+  /* position: relative; */
+  /* bottom: 100px; */
+  display: grid;
+  /* border: 2px solid blue; */
+  padding: 17%;
+  margin: 12% -13%;
+  grid-template-columns: 33.33% auto auto;
+  margin: 1% 1% 1% 1%;
+  padding: 3% 17% 4% 32%;
+}
+
+
 p {
-  margin-left: 18%;
+  margin-left: 39%;
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   font-weight: 400;
   text-align: justify;
-  margin-right: 18%;
+  margin-right: 9%;
 }
    
 }

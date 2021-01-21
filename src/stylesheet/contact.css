@@ -95,28 +95,49 @@ section span h5{
   }
 
 
+@media (min-width:375px) and (max-width:765px){
+    section h1 {
+        margin-left: 2%;
+        align-items: start;
+        font-size: 4rem;
+        letter-spacing: 8px;
+        margin-right: 10%;
+        margin-bottom: 6%;
+        /* border: 2px solid black; */
+    }
+    .forms input {
+        border: 1px solid rgb(253, 108, 132);
+        border-radius: 5px;
+        display: block;
+        padding: 3% 52% 3% 2%;
+        margin: 5% 14% 6% 4%;
+        border-style: inset;
+        background-color: rgb(253, 108, 132);
+        cursor: auto;
+        caret-color: white;
+    }
+    section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        margin-top: 2%;
+        margin-bottom: 4%;
+        animation: contactAnimation 3s ease-in-out 100ms 1 normal;
+    }
+}
   
 
-/* @media (min-width:375px) and (max-width:765px){
-    section h1 {
-        align-items: start;
-        font-size: 6rem;
-        letter-spacing: 9px;
-        margin-right: 18%;
-        margin-bottom: 6%;
-        /* border: 2px solid black; 
-    }
-} */
 
   @media (max-width:374px)
   {
     section h1 {
-        margin-left: 29%;
+        margin-left: 11%;
         align-items: start;
-        font-size: 5rem;
+        font-size: 4rem;
         letter-spacing: 1px;
         margin-right: 5%;
-        margin-bottom: 25%;
+        margin-bottom: 6%;
         /* border: 2px solid black; */
     }
 

@@ -8,17 +8,22 @@ const ProjectComponent = () => {
             {
                (data) &&
                 data.map(item => (
-                    <article key={item.id}>
+                   <div>
+                   <article key={item.id}>
                         <img src={item.image} alt="Image Error" />
                         <span className='container'> 
                             <h2>{item.title} </h2>
                             <p>{item.body}</p>
                         </span>
+                        
                     </article>
+                    <hr className="underline" />
+                   </div>
                 ))
               
             }
-            <hr className="underline" />
+            
+           
         </div>
 
     );

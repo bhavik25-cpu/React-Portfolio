@@ -1,0 +1,72 @@
+{
+  "contact" : {
+    "-MRZHRgnq1SbxATpDSdK" : {
+      "desc" : "",
+      "email" : "",
+      "name" : "",
+      "phone" : ""
+    }
+  },
+  "cv" : "",
+  "footer" : {
+    "email" : "",
+    "git" : "",
+    "linkindin" : "",
+    "ph" : ""
+  },
+  "img" : "",
+  "intro" : "",
+  "nav" : "",
+
+  "project" : [ {
+    "body" : "",
+    "id" : "0",
+    "image" : "",
+    "title" : ""
+  }, {
+    "body" : "",
+    "id" : "1",
+    "image" : "",
+    "title" : ""
+  } ],
+  "resume" : {
+    "education" : [ {
+      "body" : "",
+      "id" : "0",
+      "time" : "",
+      "title" : ""
+    } ],
+    "languages" : [ {
+      "id" : "0",
+      "title" : ""
+    }, {
+      "id" : "1",
+      "title" : ""
+    }, {
+      "id" : "2",
+      "title" : ""
+    } ],
+    "prof" : "",
+    "skill" : [ {
+      "id" : "0",
+      "title" : ""
+    }, {
+      "id" : "1",
+      "title" : ""
+    }, {
+      "id" : "3",
+      "title" : ""
+     } ],
+    "workexp" : [ {
+      "body" : "",
+      "id" : "0",
+      "time" : "",
+      "title" : ""
+    }, {
+      "body" : "",
+      "id" : "2",
+      "time" : "",
+      "title" : ""
+    }]
+  }
+}

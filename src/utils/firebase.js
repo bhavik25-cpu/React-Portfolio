@@ -1,7 +1,7 @@
 import firebase from 'firebase';
 
 const firebaseConfig = {
-  apiKey:"",
+  apiKey: "",
   authDomain: "",
   projectId: "",
   storageBucket: "",
