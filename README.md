@@ -9,20 +9,6 @@ Here is my React Portfolio <span style='font-size:40px;'>&#128071;</span>
               width=1000" height="600"></a> 
          </a>
 
-
-
-## Getting Started ##
- __Note:__ Make sure your React environment is setup for react web app if not then vist <a href="https://reactjs.org/docs/getting-started.html">React Documentation</a>
- 
-__Installation__
-In the command terminal, run the following commands:
-```git
-$ git clone https://github.com/Arijit123Muk/Portfolio.git
-$ cd React-Portfolio
-$ npm run
-```
-
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
